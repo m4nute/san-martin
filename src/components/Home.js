@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'; import "bootswatch/dist/lux/bootstrap.
 function Home() {
     const navigate = useNavigate()
     useEffect(() => {
-        Aos.init({ duration: 1000 })
+        Aos.init({ duration: 1000, offset: 0,
+            once: true })
     })
     return (
         <div className={styles.homepage}>
@@ -14,12 +15,20 @@ function Home() {
             </div>
             <h2 data-aos='slide-left'>Batallas más importantes</h2>
             <div className={`${styles.cont3}`} data-aos='fade-up' data-aos-delay="50">
-                <div className={styles.section}><Section alt={'lorenzo'} img={'lorenzo.webp'} p1={'San Lorenzo'} p2={'3 de Febrero de 1813'} /></div>
-                <div className={styles.section}><Section alt={'chacabuco'} img={'chacabuco.webp'} p1={'Chacabuco'} p2={'12 de Febrero de 1817'} /></div>
-                <div className={styles.section}><Section alt={'maipu'} img={'maipu.webp'} p1={'Maipú'} p2={'5 de Abril de 1818'} /></div>
+                <div className={styles.section}>
+                    <Section alt={'lorenzo'} img={'lorenzo.webp'} p1={'San Lorenzo'} p2={'3 de Febrero de 1813'} />
+                </div>
+                <div className={styles.section}>
+                    <Section alt={'chacabuco'} img={'chacabuco.webp'} p1={'Chacabuco'} p2={'12 de Febrero de 1817'} />
+                </div>
+                <div className={styles.section}>
+                    <Section alt={'maipu'} img={'maipu.webp'} p1={'Maipú'} p2={'5 de Abril de 1818'} />
+                </div>
             </div>
             <div className={`${styles.cont4}`}>
                 <button className={styles.button} onClick={() => navigate('./trivia', { replace: true })}>
                     Probá tus conocimientos con la trivia!</button>
-            </div></div>)}
+            </div>
+        </div>)
+}
 export default Home
