@@ -6,7 +6,8 @@ import 'aos/dist/aos.css'
 
 function Nabvar() {
   useEffect(() => {
-    Aos.init({ duration: 1200 })
+    Aos.init({ duration: 1200,offset: 0,
+      once: true })
   })
   return (
     <nav className="navbar navbar-expand navbar-dark bg-primary" data-aos='fade-down' style={{ padding: 12 }}>
